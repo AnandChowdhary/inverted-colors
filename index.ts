@@ -11,14 +11,14 @@ export default (fallbackToNone: Boolean = true) => {
     html {
         content: "";
     }
-    @media (prefers-reduced-motion: reduce) {
+    @media (inverted-colors: inverted) {
       html {
-        content: "reduce";
+        content: "inverted";
       }
     }
-    @media (prefers-reduced-motion: no-preference) {
+    @media (inverted-colors: none) {
       html {
-        content: "no-preference";
+        content: "none";
       }
     }
   `;
@@ -35,7 +35,7 @@ export default (fallbackToNone: Boolean = true) => {
   const value =
     getComputedStyle(document.documentElement)
       .getPropertyValue("content")
-      .replace(/"/g, "") || (fallbackToNone ? "no-preference" : "unknown");
+      .replace(/"/g, "") || (fallbackToNone ? "none" : "unknown");
 
   // Remove appended items from the DOM
   if (testElement.parentNode) {

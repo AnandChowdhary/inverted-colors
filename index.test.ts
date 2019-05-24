@@ -1,13 +1,13 @@
-import prefersReducedMotion from "./index";
+import invertedColors from "./index";
 
 test("should be a string", () => {
-  expect(typeof prefersReducedMotion()).toBe("string");
+  expect(typeof invertedColors()).toBe("string");
 });
 
-test("should be reduce or no-preference", () => {
-  expect(["reduce", "no-preference"].includes(prefersReducedMotion())).toBeTruthy();
+test("should be reduce or none", () => {
+  expect(["inverted", "none"].includes(invertedColors())).toBeTruthy();
 });
 
-test("should be reduce, no-preference, or unknown", () => {
-  expect(["reduce", "no-preference", "unknown"].includes(prefersReducedMotion())).toBeTruthy();
+test("should be reduce, none, or unknown", () => {
+  expect(["inverted", "none", "unknown"].includes(invertedColors())).toBeTruthy();
 });
